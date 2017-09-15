@@ -8,5 +8,14 @@ module.exports = {
     filename: "promise-proxy.js", // string
     library: "PromiseProxy", // string,
     libraryTarget: "umd", // universal module definition
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,     
+        loader: "babel-loader"
+      }
+    ]
   }
 }
