@@ -1,0 +1,27 @@
+{
+  "name": "promise-proxy",
+  "version": "1.0.0",
+  "description": "promise proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dingchaoyan1983/promise-proxy.git"
+  },
+  "keywords": [
+    "promise",
+    "proxy"
+  ],
+  "author": "dane.ding <270422767@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dingchaoyan1983/promise-proxy/issues"
+  },
+  "homepage": "https://github.com/dingchaoyan1983/promise-proxy#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.5.6"
+  }
+}
