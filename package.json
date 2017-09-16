@@ -2,10 +2,15 @@
   "name": "promise-proxy",
   "version": "1.0.0",
   "description": "promise proxy",
-  "main": "index.js",
+  "main": "dist/commonjs",
   "scripts": {
+    "build": "npm run build:commonjs && npm run build:umd",    
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack"
+    "build:commonjs": "npm run clean:commonjs && cross-env NODE_ENV=production cross-env BABEL_ENV=commonjs ./node_modules/.bin/babel src --out-dir dist/commonjs --ignore *.example.js,*.test.js,source/demo/,source/tests.js",    
+    "build:umd": "npm run clean:umd && cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.umd.js --bail",
+    "clean:commonjs": "rimraf dist/commonjs",
+    "clean:umd": "rimraf dist/umd",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +31,9 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
-    "webpack": "^3.5.6"
+    "webpack": "^3.5.6",
+    "rimraf": "^2.4.3",
+    "cross-env": "^1.0.7",
+    "babel-cli": "6.8.0"
   }
 }
